@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block desc %}{% endblock desc %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+
+    <title>
+        {% if not new.titel %}
+        Car blogs
+        {% else %}
+        {{ new.titel }}
+        {% endif %}
+    </title>
+
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+</head>
+<body>
+
+
+
+
+
+
+ <div class="col-md-12 page-body">
+
+<div class="sub-title">
+<a class="button"
+{% if user.is_active %}
+href="/admin/logout/"
+{% else %}
+href="/accounts/login/"
+{% endif %}>
+
+{% if user.is_active %}
+Выйти
+{% else %}
+Войти
+{% endif %} </a>
+
+<h1 align="center"> {% if not new.titel %}
+Car blogs
+{% else %}
+{{ new.titel }}
+{% endif %}
+</h1></div>
+
+<div class="col-md-12 content-page">
+
+ <div class="page">
+{% block search %}
+{% endblock search%}
+</div>
+
+
+{% block content %}
+{% endblock content %}
+</div>
+
+</div>
+
+</body>
+</html>

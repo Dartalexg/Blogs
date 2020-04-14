@@ -1,0 +1,59 @@
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa !important;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: #1abc9c;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    outline: none;
+    color: #333333;
+}
+
+
+.button {
+float: right;
+}
+
+
+
+
+.page-body {
+    background: #ffffff;
+    box-shadow: -2px -1px 88px 0px rgba(0,0,0,0.17);
+}
+
+
+h2{
+    font-size: 25px;
+}
+
+
+.content-page {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    border-top: 1px dashed #dedede;
+    border-bottom: 1px dashed #dedede;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

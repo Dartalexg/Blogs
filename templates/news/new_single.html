@@ -1,0 +1,41 @@
+{% extends 'news/base.html' %}
+{% block desc %}{{ new.description }}{% endblock desc %}
+{% block keywords %}{{ new.keywords }}{% endblock keywords %}
+{% block titel %}{{ new.titel }}{% endblock titel%}
+
+{% block content %}
+
+{#  <h1>{{ new.titel }}</h1>#}
+<p>{{ new.text|safe }}</p>
+<hr>
+
+Категория: {{ new.category }}<br>
+Теги: {% for tag in new.tag.all %}
+            {{ tag.title }}
+{% endfor %}<br>
+Автор: {{ new.user }} - {{ new.data }}<hr>
+
+<h2 align="center">Коментарии</h2>
+        {%   for comment in comments %}
+             Пользователь {{ comment.user }}<br>
+             {{ comment.text }}<br>
+           Дата добавления -  {{ comment.data }}<br><br><hr>
+          {% endfor %}
+
+{#    {% for comment in new.commets_set.all %}#}
+{#           Пользователь {{ comment.user }}<br>#}
+{#          {{ comment.text }}<br>#}
+{#           Дата добавления -  {{ comment.data }}<br><br>#}
+{#   {% endfor %}#}
+
+        {% if user.is_active %}
+
+        <form action="" method="post">
+{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+        </form>
+{% else %}
+        <h4>Чтобы оставить комментарий <a href="/accounts/login/">авторизуйтесь</a></h4>
+{% endif %}
+    {% endblock content %}

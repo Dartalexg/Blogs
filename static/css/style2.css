@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.page{
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 1300px;
+}
+.main{
+    width: 1000px;
+}
+a{
+    color: blue;
+}
