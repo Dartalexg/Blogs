@@ -17,6 +17,9 @@ python manage.py migrate
 
 python manage.py createsuperuser
 
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
 _________________________________________________________________________________________________________________
 
 cmd
